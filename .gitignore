@@ -18,5 +18,21 @@
 *.tar.gz
 *.rar
 
+target
+.env
+.idea/
+*.iml
+
+# Eclipse #
+.settings/
+.classpath
+.project
+
+#Webstorm
+*\.idea\*
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+war/.idea/modules.xml
+war/.idea/war.iml
+war/.idea/workspace.xml
