@@ -18,7 +18,7 @@ public class Json {
 		return this;
 	}
 	
-	public JsonArr arr(Object... value) {
+	public static JsonArr arr(Object... value) {
 		return new JsonArr(value);
 	}
 	

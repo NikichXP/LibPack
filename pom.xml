@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.nikichxp</groupId>
-    <version>0.1.0</version>
+    <version>0.1.1a</version>
     <artifactId>libpack</artifactId>
 
     <dependencies>
@@ -29,11 +29,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>21.0</version>
         </dependency>
 
     </dependencies>
