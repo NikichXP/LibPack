@@ -3,6 +3,7 @@ package com.nikichxp.util;
 import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Json {
@@ -21,6 +22,16 @@ public class Json {
 	public static JsonArr arr(Object... value) {
 		return new JsonArr(value);
 	}
+	
+//	public static JsonArr arr(Collection values) {
+//		if (values.size() > 0 && values.iterator().next() instanceof Collection) {
+//			JsonArr[] data = new JsonArr[values.size()];
+//			for (int i = 0; i < data.length; i++) {
+////
+//			}
+//		}
+//		return new JsonArr(value);
+//	}
 	
 	public String json () {
 		StringBuilder sb = new StringBuilder("{");
