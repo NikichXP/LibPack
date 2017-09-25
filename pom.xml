@@ -50,6 +50,7 @@
     </dependencies>
 
     <properties>
+        <java.version>9</java.version>
         <github.global.server>github</github.global.server>
     </properties>
 
