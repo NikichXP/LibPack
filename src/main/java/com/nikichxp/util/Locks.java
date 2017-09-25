@@ -22,7 +22,7 @@ public class Locks {
 		}
 	}
 	
-	public void lock (Object key) {
+	public static void lock (Object key) {
 		Semaphore s = locks.get(key);
 		if (s == null) {
 			s = locks.put(key, new Semaphore(1));
@@ -34,7 +34,7 @@ public class Locks {
 		}
 	}
 	
-	public void lock (Object key, int defaultValue) {
+	public static void lock (Object key, int defaultValue) {
 		Semaphore s = locks.get(key);
 		if (s == null) {
 			s = locks.put(key, new Semaphore(defaultValue));
@@ -46,7 +46,7 @@ public class Locks {
 		}
 	}
 	
-	public void unlock (Object key) {
+	public static void unlock (Object key) {
 		locks.get(key).release();
 	}
 	

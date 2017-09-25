@@ -23,6 +23,10 @@ public class Json {
 		return new JsonArr(value);
 	}
 	
+	public static Json arr (String key, Object... values) {
+		return new Json().and(key, arr(values));
+	}
+	
 //	public static JsonArr arr(Collection values) {
 //		if (values.size() > 0 && values.iterator().next() instanceof Collection) {
 //			JsonArr[] data = new JsonArr[values.size()];
