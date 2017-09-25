@@ -13,8 +13,8 @@ import java.io.IOException;
 public class GSheetsAPIConfigurer {
 	
 	private String accessToken;
-	@Builder.Default private RestTemplate restTemplate = null;
-	@Builder.Default private ResponseErrorHandler errorHandler = new ResponseErrorHandler() {
+	private RestTemplate restTemplate = null;
+	private ResponseErrorHandler errorHandler = new ResponseErrorHandler() {
 		@Override
 		public boolean hasError (ClientHttpResponse clientHttpResponse) throws IOException {
 			return false;
@@ -27,7 +27,7 @@ public class GSheetsAPIConfigurer {
 			}
 		}
 	};
-	@Builder.Default private char rowStartChar = 'A';
+	private char rowStartChar = 'A';
 	
 	public GSheetsAPI api() {
 		if (restTemplate == null) {

@@ -30,6 +30,17 @@
             <artifactId>spring-data-mongodb</artifactId>
             <version>1.10.0.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+            <version>1.5.1.RELEASE</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -82,7 +93,6 @@
 
     <properties>
         <java.version>9</java.version>
-        <github.global.server>github</github.global.server>
     </properties>
 
     <repositories>
