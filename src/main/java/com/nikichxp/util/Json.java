@@ -7,7 +7,12 @@ import java.util.HashMap;
 
 public class Json {
 	
+	private String defaultNullValue = "null";
 	private HashMap<String, Object> data = new HashMap<>();
+	
+	public static Json of (String defaultNullValue) {
+		return new Json().setDefaultNullValue(defaultNullValue);
+	}
 	
 	public static Json of (String key, Object... value) {
 		return new Json().and(key, value);
@@ -24,10 +29,10 @@ public class Json {
 	public Json and (String key, Object... value) {
 		data.put(key,
 			value == null ?
-				"null" :
+				defaultNullValue :
 				value.length == 1 ?
 					value[0] == null ?
-						"null" : value[0] :
+						defaultNullValue : value[0] :
 					value.length == 0 ?
 						"[]" :
 						new JsonArr(value));
@@ -43,6 +48,11 @@ public class Json {
 //		}
 //		return new JsonArr(value);
 //	}
+	
+	public Json setDefaultNullValue(String nullValue) {
+		this.defaultNullValue = nullValue;
+		return this;
+	}
 	
 	public String json () {
 		StringBuilder sb = new StringBuilder("{");
