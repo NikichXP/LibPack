@@ -1,13 +1,16 @@
 package com.nikichxp.util;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.Arrays;
 import java.util.HashMap;
 
+@NoArgsConstructor
 public class Json {
 	
-	private String defaultNullValue = "null";
+	private static String globalDefaultNullValue = "null";
+	private String defaultNullValue = globalDefaultNullValue + "";
 	private HashMap<String, Object> data = new HashMap<>();
 	
 	public static Json of (String defaultNullValue) {
@@ -49,7 +52,7 @@ public class Json {
 //		return new JsonArr(value);
 //	}
 	
-	public Json setDefaultNullValue(String nullValue) {
+	public Json setDefaultNullValue (String nullValue) {
 		this.defaultNullValue = nullValue;
 		return this;
 	}
