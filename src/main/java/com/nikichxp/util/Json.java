@@ -13,6 +13,10 @@ public class Json {
 	private String defaultNullValue = globalDefaultNullValue + "";
 	private HashMap<String, Object> data = new HashMap<>();
 	
+	public static void setGlobalDefaultNullValue (String globalDefaultNullValue) {
+		Json.globalDefaultNullValue = globalDefaultNullValue;
+	}
+	
 	public static Json of (String defaultNullValue) {
 		return new Json().setDefaultNullValue(defaultNullValue);
 	}
