@@ -3,7 +3,6 @@ package com.nikichxp.util;
 import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class Json {
@@ -14,12 +13,7 @@ public class Json {
 		return new Json().and(key, value);
 	}
 	
-	public Json and (String key, Object... value) {
-		data.put(key, value.length == 1 ? value[0] : value.length == 0 ? "" : new JsonArr(value));
-		return this;
-	}
-	
-	public static JsonArr arr(Object... value) {
+	public static JsonArr arr (Object... value) {
 		return new JsonArr(value);
 	}
 	
@@ -27,6 +21,19 @@ public class Json {
 		return new Json().and(key, arr(values));
 	}
 	
+	public Json and (String key, Object... value) {
+		data.put(key,
+			value == null ?
+				"null" :
+				value.length == 1 ?
+					value[0] == null ?
+						"null" : value[0] :
+					value.length == 0 ?
+						"[]" :
+						new JsonArr(value));
+		return this;
+	}
+
 //	public static JsonArr arr(Collection values) {
 //		if (values.size() > 0 && values.iterator().next() instanceof Collection) {
 //			JsonArr[] data = new JsonArr[values.size()];

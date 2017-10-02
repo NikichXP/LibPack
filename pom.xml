@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.nikichxp</groupId>
-    <version>0.2.3</version>
+    <version>0.2.4</version>
     <artifactId>libpack</artifactId>
 
     <dependencies>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
+            <version>1.16.16</version>
         </dependency>
 
     </dependencies>
